@@ -24,10 +24,10 @@
 19. 공지사항 - 공지사항작성(noticeWrite.html)
 20. 공지사항 - 공지사항보기(noticeView.html)
 21. 마이페이지 - 스케쥴러(scheduler.html)
-23. 이페이지 - 스케줄러작성(schedulerWrite.html)
-24 마이페이지 - 제품계산기(ProductCalculation.html)
-25 마이페이지 - 작성된계약서일람(constractList.html)
-26 마이페이지 - 작성된계약서보기(constractView.html)
+23. 머이페이지 - 스케줄러작성(schedulerWrite.html)
+24. 마이페이지 - 제품계산기(ProductCalculation.html)
+25. 마이페이지 - 작성된계약서일람(constractList.html)
+26. 마이페이지 - 작성된계약서보기(constractView.html)
 
 합 : 26개의 페이지
 
