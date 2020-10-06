@@ -3,84 +3,103 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>[home]Main</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .topConponent {
 	font-weight		: bold;
-    padding-bottom	: 10px;
+	padding-bottom		: 10px;
 }
 .topLogo {
 	display			: inline-block;
 	float			: left;
-	vertical-align	: middle;
+	vertical-align		: middle;
 }
 .topLogin {
 	display			: inline-block;
-    border			: 0px;
-    background-color: #fde6ff;
-    font-size		: 20px;
-    color			: #FFFFFF;
+	border			: 0px;
+	background-color	: #fde6ff;
+	font-size		: 20px;
+	color			: #FFFFFF;
     
 	float			: right;
-    vertical-align	: middle;
-    margin-right	: 10px;
-    padding-left	: 3px;
-    padding-right	: 3px;
-    padding-bottom	: 2px;
-    padding-bottom	: 2px;
-   	
+	vertical-align		: middle;
+	margin-right		: 10px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	padding-bottom		: 2px;
+	padding-bottom		: 2px;
 }
 
 .menuDiv {
 	height			: 60%;
-    width			: 100%;
-    font-weight		: bold;
+	font-weight		: bold;
 }
 
 .leftComponent {
 	width			: 35%;
-    float			: left;
+	float			: left;
 }
 
 .rightComponent {
 	width			: 35%;
-    float			: left;
+	float			: left;
 }
 
 .menuComponent {
 	width			: 29%;
-    background-color: #4b5f81;
-    float			: left;
-    margin-top		: 50px;
+	background-color	: #4b5f81;
+	float			: left;
+	margin-top		: 50px;
 }
 .menuList {
 	border			: 1px solid #000000;
-	text-decoration : none;
+	text-decoration 	: none;
 	text-align		: center;
-    font-size		: 28px;
-    padding-top		: 20px;
-    padding-bottom	: 20px;
-    float			: none;
-    
+	color			: #FFFFFF;
+	font-size		: 28px;
+	padding-top		: 20px;
+	padding-bottom		: 20px;
+	float			: none; 
 }
 
 .menuList a {
-	text-decoration : none;
-    color			: #FFFFFF;
+	text-decoration		: none;
+	color			: #FFFFFF;
 }
 
-.sideMenuDiv {
-	width			: 100%;
+.sideMenuIntroDiv {
+	margin-top		: 30px;
+   
+}
+
+.sideMenuASDiv {
+	margin-top		: 105px;
+   
+}
+
+.sideMenuOrderDiv {
+	margin-top		: 180px;
+   
+}
+
+.sideMenuStockDiv {
+	margin-top		: 253px;
+   
 }
 
 ul.sideMenuList {
-	
+	padding-left		: 0px;
 }
 
 ul.sideMenuList li {
+	width			: 300px;
 	list-style		: none;
-	text-ailgn		: center;
-    font-size		: 30px;
+	text-align		: center;
+	font-size		: 30px;
+	border			: 1px solid #000000;
+	padding-top		: 20px;
+	padding-bottom		: 20px;
+	background-color	: #4b5f81;
 }
 
 ul.sideMenuList li a {
@@ -96,7 +115,7 @@ ul.sideMenuList li a {
 	border-bottom-right-radius: 5px;
 }
 
-.viewMenu {
+.exposeMenu {
 	display			: block;
 }
 
@@ -104,10 +123,26 @@ ul.sideMenuList li a {
 	display			: none;
 }
 </style>
-<script type="javascript">
+<script type="text/javascript">
 
+function onHoverMenuList(menuNum) {
+	var getClass =$(this).attr("class")
+	$(".sideMenuIntroDiv").addClass('hideMenu')
+	$(".sideMenuASDiv").addClass('hideMenu')
+	$(".sideMenuOrderDiv").addClass('hideMenu')
+	$(".sideMenuStockDiv").addClass('hideMenu')
+	
+	if(menuNum == 1) {
+		$(".sideMenuIntroDiv").removeClass('hideMenu')
+	} else if(menuNum == 2) {
+		$(".sideMenuASDiv").removeClass('hideMenu')
+	} else if(menuNum == 3) {
+		$(".sideMenuOrderDiv").removeClass('hideMenu')
+	} else if(menuNum == 4) {
+		$(".sideMenuStockDiv").removeClass('hideMenu')
+	}
+}
 </script>
-
 
 </head>
 <body>
@@ -121,39 +156,39 @@ ul.sideMenuList li a {
 <div class="menuDiv">
 	<div class="leftComponent">왼쪽배너</div>
       <div class="menuComponent">
-        <div class ="menuList"><a href="#">회사 소개</a></div>
+        <div class ="menuList" onmouseover="onHoverMenuList(1)" onclick="">회사 소개</div>
 
-        <div class ="menuList"><a href="#">A&nbsp;/&nbsp;S</a></div>
+        <div class ="menuList" onmouseover="onHoverMenuList(2)" onclick="">A&nbsp;/&nbsp;S</div>
 
-        <div class ="menuList"><a href="#">제작주문의뢰</a></div>
+        <div class ="menuList" onmouseover="onHoverMenuList(3)" onclick="">제작주문의뢰</div>
 
-        <div class ="menuList"><a href="#">재고 보기</a></div>
+        <div class ="menuList" onmouseover="onHoverMenuList(4)" onclick="">재고 보기</div>
 
         <div class ="menuList"><a href="#">기타 공지사항</a></div>
       </div>
     </div>
     <div class="rightComponent">
     	<div class="">오른쪽배너
-        	<div class="sideMenuDiv">
-        	<ul class="sideMenuList">
+        	<div class="sideMenuIntroDiv" id="sideMenuIntroDiv">
+        	<ul class="sideMenuList" >
             	<li><a href="#">회사소개</a></li>
                 <li><a href="#">전화상담</a></li>
                 <li><a href="#">오시는길</a></li>
             </ul>
           </div>
-          <div class="sideMenuDiv">
+          <div class="sideMenuASDiv" id="sideMenuASDiv">
               <ul class="sideMenuList">
                   <li><a href="#">A&nbsp;/&nbsp;S 조회</a></li>
                   <li><a href="#">A&nbsp;/&nbsp;S 신청</a></li>
               </ul>
           </div>
-          <div class="sideMenuDiv">
+          <div class="sideMenuOrderDiv" id="sideMenuOrderDiv">
               <ul class="sideMenuList">
                   <li><a href="#">제작주문현황</a></li>
                   <li><a href="#">주문하기</a></li>
               </ul>
           </div>
-           <div class="sideMenuDiv">
+           <div class="sideMenuStockDiv" id="sideMenuStockDiv">
               <ul class="sideMenuList">
                   <li><a href="#">새제품</a></li>
                   <li><a href="#">중고품</a></li>
@@ -161,8 +196,13 @@ ul.sideMenuList li a {
           </div>   
      </div> 
 </div>
-<div class="bottomDiv">
-
-</div>
 </body>
+<footer class="bottomDiv">
+<hr/>
+<div class="companyInfo">
+	<div> 관리자 : 박태근(Tel 010-5875-1608)</div>
+	<div> 주소 : 경기도 용인시 처인구 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
+	<div> 대표전화 : 000 - 000 - 0000</div>
+</div>
+</footer>
 </html>
