@@ -103,16 +103,25 @@ ul.sideMenuList li {
 }
 
 ul.sideMenuList li a {
-	text-decoration : none;
-    color			: #FFFFFF;
+	text-decoration 	: none;
+    	color			: #FFFFFF;
 }
 
 .roundBtn {
-	border-radius: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-radius			: 5px;
+	border-top-left-radius		: 5px;
+	border-top-right-radius		: 5px;
+	border-bottom-left-radius	: 5px;
+	border-bottom-right-radius	: 5px;
+}
+
+
+.footer {
+	position		: absolute;
+	bottom			: 0px;
+	width			: 100%;
+	height			: 150px;
+    
 }
 
 .exposeMenu {
@@ -124,24 +133,63 @@ ul.sideMenuList li a {
 }
 </style>
 <script type="text/javascript">
+var clickflg_intro=0;
+var clickflg_as=0;
+var clickflg_order=0;
+var clickflg_stock=0;
 
 function onHoverMenuList(menuNum) {
-	var getClass =$(this).attr("class")
-	$(".sideMenuIntroDiv").addClass('hideMenu')
-	$(".sideMenuASDiv").addClass('hideMenu')
-	$(".sideMenuOrderDiv").addClass('hideMenu')
-	$(".sideMenuStockDiv").addClass('hideMenu')
+	
+	$(".sideMenuIntroDiv").addClass('hideMenu');
+	$(".sideMenuASDiv").addClass('hideMenu');
+	$(".sideMenuOrderDiv").addClass('hideMenu');
+	$(".sideMenuStockDiv").addClass('hideMenu');
 	
 	if(menuNum == 1) {
-		$(".sideMenuIntroDiv").removeClass('hideMenu')
+		$(".sideMenuIntroDiv").removeClass('hideMenu');
 	} else if(menuNum == 2) {
-		$(".sideMenuASDiv").removeClass('hideMenu')
+		$(".sideMenuASDiv").removeClass('hideMenu');
 	} else if(menuNum == 3) {
-		$(".sideMenuOrderDiv").removeClass('hideMenu')
+		$(".sideMenuOrderDiv").removeClass('hideMenu');
 	} else if(menuNum == 4) {
-		$(".sideMenuStockDiv").removeClass('hideMenu')
+		$(".sideMenuStockDiv").removeClass('hideMenu');
 	}
 }
+
+function onClickMenuList(menuNum) {
+	if(menuNum == 1 && clickflg_intro == 0) {
+		$(".sideMenuIntroDiv").addClass('hideMenu');
+		clickflg_intro++;
+
+	} else if(menuNum == 2 && clickflg_as == 0) {
+		$(".sideMenuASDiv").addClass('hideMenu');
+		clickflg_as++;
+
+	} else if(menuNum == 3 && clickflg_order == 0) {
+		$(".sideMenuOrderDiv").addClass('hideMenu');
+		clickflg_order++;
+
+	} else if(menuNum == 4 && clickflg_stock == 0) {
+		$(".sideMenuStockDiv").addClass('hideMenu');
+		clickflg_stock++;
+
+	} else if(menuNum == 1 && clickflg_intro == 1) {
+		$(".sideMenuIntroDiv").removeClass('hideMenu');
+		clickflg_intro =0;
+
+	} else if(menuNum == 2 && clickflg_as == 1) {
+		$(".sideMenuASDiv").removeClass('hideMenu');
+		clickflg_as =0;
+
+	} else if(menuNum == 3 && clickflg_order == 1) {
+		$(".sideMenuOrderDiv").removeClass('hideMenu');
+		clickflg_order =0;
+
+	} else if(menuNum == 4 && clickflg_stock == 1) {
+		$(".sideMenuStockDiv").removeClass('hideMenu');
+		clickflg_stock =0;
+	} 
+} 
 </script>
 
 </head>
@@ -156,39 +204,39 @@ function onHoverMenuList(menuNum) {
 <div class="menuDiv">
 	<div class="leftComponent">왼쪽배너</div>
       <div class="menuComponent">
-        <div class ="menuList" onmouseover="onHoverMenuList(1)" onclick="">회사 소개</div>
+        <div class ="menuList" onmouseover="onHoverMenuList(1)"  onclick="onClickMenuList(1)">회사 소개</div>
 
-        <div class ="menuList" onmouseover="onHoverMenuList(2)" onclick="">A&nbsp;/&nbsp;S</div>
+        <div class ="menuList" onmouseover="onHoverMenuList(2)"  onclick="onClickMenuList(2)">A&nbsp;/&nbsp;S</div>
 
-        <div class ="menuList" onmouseover="onHoverMenuList(3)" onclick="">제작주문의뢰</div>
+        <div class ="menuList" onmouseover="onHoverMenuList(3)"  onclick="onClickMenuList(3)">제작주문의뢰</div>
 
-        <div class ="menuList" onmouseover="onHoverMenuList(4)" onclick="">재고 보기</div>
+        <div class ="menuList" onmouseover="onHoverMenuList(4)"  onclick="onClickMenuList(4)">재고 보기</div>
 
         <div class ="menuList"><a href="#">기타 공지사항</a></div>
       </div>
     </div>
     <div class="rightComponent">
     	<div class="">오른쪽배너
-        	<div class="sideMenuIntroDiv" id="sideMenuIntroDiv">
+        	<div class="sideMenuIntroDiv hideMenu" id="sideMenuIntroDiv">
         	<ul class="sideMenuList" >
             	<li><a href="#">회사소개</a></li>
                 <li><a href="#">전화상담</a></li>
                 <li><a href="#">오시는길</a></li>
             </ul>
           </div>
-          <div class="sideMenuASDiv" id="sideMenuASDiv">
+          <div class="sideMenuASDiv hideMenu" id="sideMenuASDiv">
               <ul class="sideMenuList">
                   <li><a href="#">A&nbsp;/&nbsp;S 조회</a></li>
                   <li><a href="#">A&nbsp;/&nbsp;S 신청</a></li>
               </ul>
           </div>
-          <div class="sideMenuOrderDiv" id="sideMenuOrderDiv">
+          <div class="sideMenuOrderDiv hideMenu" id="sideMenuOrderDiv">
               <ul class="sideMenuList">
                   <li><a href="#">제작주문현황</a></li>
                   <li><a href="#">주문하기</a></li>
               </ul>
           </div>
-           <div class="sideMenuStockDiv" id="sideMenuStockDiv">
+           <div class="sideMenuStockDiv hideMenu" id="sideMenuStockDiv">
               <ul class="sideMenuList">
                   <li><a href="#">새제품</a></li>
                   <li><a href="#">중고품</a></li>
@@ -197,7 +245,7 @@ function onHoverMenuList(menuNum) {
      </div> 
 </div>
 </body>
-<footer class="bottomDiv">
+<footer class="footer">
 <hr/>
 <div class="companyInfo">
 	<div> 관리자 : 박태근(Tel 010-5875-1608)</div>
