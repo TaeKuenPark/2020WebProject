@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<title></title>
+<script type="text/javascript">
+// 메뉴 버튼 이벤트(마우스 접근)
+function onmouseoverMenu() {
+	var menuName="";
+	$(document).on('mouseover','.menuBar',  function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(8,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#6f0c4f');
+		}	
+	});
+}
+// 메뉴 버튼 이벤트(마우스 탈출)
+function onmouseoutMenu() {
+	var menuName="";
+	$(document).on('mouseout','.menuBar', function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(8,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#4c84b9');
+		}
+	});
+}
+// 메뉴부분 크기 조절
+function resizeContentWidth(content, resizelength) {
+	var windowWidth = $(window).width();
+
+	$('.'+content).width(windowWidth-resizelength+"px");
+}
+
+// 실시간 창크기 조절시 작동 이벤트
+$(window).resize(function() {
+
+	var resizeWidth = $(window).width()-16;
+	$('.middleDiv').width(resizeWidth+"px");
+	$('table thead, tbody').width(resizeWidth+"px");
+
+});
+/* ********* 상단 스크립트는 공통화 부분입니다. ****** */
+</script>
+<style>
+/* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
+@media (max-width : 1000px) and  (max-height : 1000px){
+	.footer {
+		display 		: none;
+		
+	}
+}
+.bodyDiv {
+	height			: 900px;
+}
+.topDiv {
+	height			: 50px;
+}
+.middleDiv {
+	width			: 1247px;
+	height			: 100px;
+}
+.footer {
+	height			: 100px;
+}
+/* 상단 로고및 로그인 css*/
+.topLogo {
+	display			: inline-block;
+	float			: left;
+	vertical-align		: middle;
+}
+
+.topLogin {
+	display			: inline-block;
+	border			: 0px;
+	background-color		: #fde6ff;
+	font-size			: 20px;
+	color			: #FFFFFF;
+	float			: right;
+	vertical-align		: middle;
+	margin-right		: 10px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	padding-top		: 2px;
+	padding-bottom		: 2px;
+}
+
+/* 둥근 버튼 설정 레이아웃 */
+.roundBtn {
+	border-radius		: 5px;
+	border-top-left-radiu	: 5px;
+	border-top-right-radius	: 5px;
+	border-bottom-left-radius	: 5px;
+	border-bottom-right-radius	: 5px;
+}
+
+.menuDiv {
+	height			: 50px;
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-weight		: bold;
+	color			: #FFFFFF;
+	
+}
+
+.menuBar {
+	border			: 1px solid #4c84b9;
+	background-color		: #4c84b9;
+	float			: left;
+	margin-left		: 15px;
+	width			: 100px;
+	height			: 30px;
+	padding-top		: 15px;	
+}
+
+table {
+	border-collapse		: collapse;
+}
+table th, td{
+	border			: 1px solid #000000;
+	height			: 40px;
+	text-align			: center;
+}
+
+
+table thead, tbody {
+	width			: 1247px;
+}
+
+/* 페이징부분 */
+.pagelistDiv {
+	margin-top		: 20px;
+	height			: 20px;
+	
+}
+
+
+.pageNum {
+	border			: 1px solid #000000;
+	height			: 15px;
+	width			: 15px;
+	float			: left;
+	font-size			: 15px;
+	font-weight		: bold;
+	text-align			: center;
+	padding-top		: 5px;
+	margin-right		: 10px;	
+}
+
+/* 검색기능 아이템들 */
+.serachListBox {
+	width			: 70px;
+	height			: 31px;
+	float			: left;
+	text-align			: center;
+	margin-right		: 10px;
+	padding-left		: 5px;
+}
+
+.serachInputbox {
+	width			: 300px;
+	height			: 25px;
+	float			: left;
+	font-size			: 15px;
+	font-weight		: bold;
+}
+.serachBtn {
+	border			: 1px solid #000000;
+	width			: 40px;
+	font-size			: 25px;
+	float			: left;
+}
+
+/* ********* 상단 css는 공통화 부분입니다. ****** */
+
+.contentTitle  {
+	height			: 40px;
+	margin-top		: 20px;
+	margin-bottom		: 10px;
+	font-size			: 30px;
+	font-weight		: bold;
+
+}
+
+.Num {
+	width			: 50px;
+}
+
+.content1 {
+	width			: 50px;
+}
+
+.content2 {
+	width			: 136px;
+}
+
+.content3 {
+	width			: 500px;
+}
+
+.content4 {
+	width			: 130px;
+}
+
+.content5 {
+	width			: 50px;
+}
+
+.content6 {
+	width			: 136px;
+}
+
+.content7 {
+	width			: 81px;
+}
+
+.contentTitle .titleNameItem {
+	width			: 714px;
+	margin-left		: 35px;
+	float			: left;
+}
+
+.serachItem {
+	width			: 497px;
+	float			: left;
+}
+</style>
+</head>
+<body>
+<div class="bodyDiv">
+	<div class="topDiv">
+		<div class="topLogo">logo</div>
+		<div class="topLogin roundBtn">로그인</div>
+	</div>
+	<hr/>
+	<div class="middleDiv">
+		<div class="menuDiv">
+			<div class="menuBar AS" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> AS 목록</div>
+			<div class="menuBar order" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 제작 주문 </div>
+			<div class="menuBar stock" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 재고 확인 </div>
+			<div class="menuBar notice" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 공지사항 </div>
+		</div>
+		<div class="contentDiv">
+			<div class="contentTitle">
+				<div class="titleNameItem">공지사항</div>
+				<div class="serachItem">
+					<select class="serachListBox">
+						<option value=""> 번호 </option>
+						<option value=""> 항목1 </option>
+						<option value=""> 항목2 </option>
+						<option value=""> 긴 항목 </option>
+						<option value=""> 항목3 </option>
+						<option value=""> 항목4 </option>
+						<option value=""> 항목5 </option>
+						<option value=""> 항목6 </option>
+					</select>
+					<input type="text" class="serachInputbox" placeholder="검색어를 입력하시오.">
+					<!-- 돋보기 마크 들어갈 예정 -->
+					<div class="serachBtn" onmouseover="" onclick="">검</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="contentMain">
+				<div class="tableDiv">
+					<!-- No, 첨부파일, 의뢰자, 내용, 작성일, 갱신일, 최종 갱신자 , 진행도-->
+					<table class="dataTable">
+						<thead>
+							<tr>
+								<th class="Num" onclick="">No</th>
+								<th class="content1" onclick="">항목1</th>
+								<th class="content2" onclick="">항목2</th>
+								<th class="content3" onclick="">긴 항목</th>
+								<th class="content4" onclick="">항목3</th>
+								<th class="content5" onclick="">항목4</th>
+								<th class="content6" onclick="">항목5</th>
+								<th class="content7" onclick="">항목6</th>
+							</tr>
+						</thead>
+						<tbody> <!-- 임시 데이터 -->
+							<tr>
+								<td class="Num">0</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">1</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBVV</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">2</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">3</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+<tr>
+								<td class="Num">4</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">5</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+<tr>
+								<td class="Num">6</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">7</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+<tr>
+								<td class="Num">12</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+							<tr>
+								<td class="Num">99</td>
+								<td class="content1">WW</td>
+								<td class="content2">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content3">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</td>
+								<td class="content4">WWWWWWWW</td>
+								<td class="content5">WWWWWWWW</td>
+								<td class="content6">ㅉㅉㅉㅉㅉㅉㅉㅉ</td>
+								<td class="content7">WWWW</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="pagelistDiv">
+						<div class="pageNum">첫</div>
+						<div class="pageNum">1</div>
+						<div class="pageNum">2</div>
+						<div class="pageNum">3</div>
+						<div class="pageNum">4</div>
+						<div class="pageNum">...</div>
+						<div class="pageNum">첫</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+<hr/>
+	<div class="companyInfo">
+		<div> 관리자 : 박태근(Tel 010-5875-1608)</div>
+		<div> 주소 : 경기도 용인시 처인구 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
+		<div> 대표전화 : 000 - 000 - 0000</div>
+	</div>
+</footer>
+</body>
+</html>
