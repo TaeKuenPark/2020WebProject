@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+// 이곳에 스크립트 입력
+// 메뉴 버튼 이벤트(마우스 접근)
+function onmouseoverMenu() {
+	var menuName="";
+	$(document).on('mouseover','.menuBar',  function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(8,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#6f0c4f');
+		}	
+	});
+}
+// 메뉴 버튼 이벤트(마우스 탈출)
+function onmouseoutMenu() {
+	var menuName="";
+	$(document).on('mouseout','.menuBar', function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(8,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#4c84b9');
+		}
+	});
+}
+
+// 실시간 이벤트 스크립트 입력
+$(window).resize(function() {
+
+	var resizeWidth = $(window).width()-16;
+	$('.middleDiv').width(resizeWidth+"px");
+	$('table thead, tbody').width(resizeWidth+"px");
+});
+</script>
+<style>
+/* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
+@media (max-width : 1000px) and  (max-height : 1000px){
+	.footer {
+		display 		: none;
+		
+	}
+}
+
+.bodyDiv {
+	height			: 900px;
+}
+.topDiv {
+	height			: 50px;
+}
+.middleDiv {
+	width			: 1247px;
+	height			: 100px;
+}
+.footer {
+	height			: 100px;
+}
+
+/* 상단 로고및 로그인 css*/
+.topLogo {
+	display			: inline-block;
+	float			: left;
+	vertical-align		: middle;
+}
+
+.topLogin {
+	display			: inline-block;
+	border			: 0px;
+	background-color		: #fde6ff;
+	font-size			: 20px;
+	color			: #FFFFFF;
+	float			: right;
+	vertical-align		: middle;
+	margin-right		: 10px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	padding-top		: 2px;
+	padding-bottom		: 2px;
+}
+
+/* 둥근 버튼 설정 레이아웃 */
+.roundBtn {
+	border-radius		: 5px;
+	border-top-left-radiu	: 5px;
+	border-top-right-radius	: 5px;
+	border-bottom-left-radius	: 5px;
+	border-bottom-right-radius	: 5px;
+}
+
+/* 가로 메뉴 레이아웃 */
+
+.menuDiv {
+	height			: 50px;
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-weight		: bold;
+	color			: #FFFFFF;
+	
+}
+
+.menuBar {
+	border			: 1px solid #4c84b9;
+	background-color		: #4c84b9;
+	float			: left;
+	margin-left		: 15px;
+	width			: 100px;
+	height			: 30px;
+	padding-top		: 15px;	
+}
+
+
+/* ******************  상단은 공통화 필요부분 ************* */
+
+.contentTitle  {
+	height			: 40px;
+	margin-top		: 20px;
+	margin-bottom		: 10px;
+	font-size			: 30px;
+	font-weight		: bold;
+
+}
+
+.titleNameItem {
+	margin-left		: 35px;
+}
+/* 글작성 콘텐츠 레이아웃 */
+.writeOrderDiv {
+	border			: 2px solid #000000;
+	width			: 700px;
+	height			: 500px;
+	margin-left		: 250px;
+}
+
+.titleItem {
+	display			: flex;
+	border			: 2px solid #000000;
+	float			: left;
+	width			: 180px;
+	height			: 20px;
+	padding-top		: 10px;
+	padding-bottom		: 10px;
+	align-items		: center;
+	justify-content		: center;
+}
+
+.ItemInputDiv {
+	border			: 2px solid #000000;
+	width			: 696px;
+	height			: 20px;
+	padding-top		: 5px;
+	padding-bottom		: 15px;
+}
+
+.ItemInputDiv input[type="text"], input[type="file"] {
+	padding-left		: 10px;;
+	margin-left		: 20px;
+	height			: 25px;
+	font-size			: 20px;
+	font-weight		: bold;
+}
+
+.explainOrderDiv textarea {
+	padding-left		: 5px;
+	font-size			: 15px;
+}
+
+.clientNameInput {
+	width			: 200px;
+}
+
+.clientPasswordInput  {
+	width			: 130px;
+}
+
+.orderTitleInput {
+	width			: 450px;
+}
+
+.telphoneInput {
+	width			: 50px;
+}
+
+.InputContent {
+	width			: 508px;
+	height			: 133px;
+}
+
+.addFileInput {
+	width			: 450px;
+}
+
+.textareaFontItemDiv {
+	height			: 55px;
+}
+
+.textareaItem {
+	height			: 200px;
+	padding-top		: 0px;
+	padding-bottom		: 0px;
+}
+
+/* 상세내용 글꼴 설정 요소 레이아웃*/
+.textareaFontItemDiv {
+	border			: 1px solid #000000;
+	width			: 507px;
+	padding-left		: 5px;
+	padding-top		: 5px;
+	float			: left;
+}
+
+.fileInputDiv {
+	height			: 98px;
+}
+.fontItemTitle {
+	float			: left;
+}
+
+.fontItem {
+	float			: left;
+	margin-left		: 10px;
+}
+.fontItemBtn {
+	border			: 1px solid #000000;
+	float			: left;
+	margin-left		: 10px;
+	padding			: 2px 2px 2px 2px;
+	
+}
+
+.writeOrderBottom {
+	height			: 30px;
+	margin-left		: 242px;
+	margin-top		: 30px;
+	margin-bottom		: 30px;
+	text-align			: center;
+}
+
+.writeOrderBottom input[type="button"] {
+	margin-right		: 20px;
+	width			: 130px;
+	height			: 30px;
+	font-weight		: bold;
+	font-size			: 18px;
+}
+
+.inputFileItem {
+	height			: 98px;
+}
+
+.bold {
+	font-weight		: bold;
+}
+
+.underLine {
+	text-decoration		: underline;
+}
+
+.cancel {
+	text-decoration		: line-through;
+}
+</style>
+</head>
+
+<body>
+<div class="bodyDiv">
+	<div class="topDiv">
+		<div class="topLogo">logo</div>
+		<div class="topLogin roundBtn">로그인</div>
+	</div>
+	<hr/>
+	<div class="middleDiv">
+		<div class="menuDiv">
+			<div class="menuBar AS" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> AS 목록</div>
+			<div class="menuBar order" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 제작 현황 </div>
+			<div class="menuBar stock" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 재고 확인 </div>
+			<div class="menuBar notice" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 공지사항 </div>
+		</div>
+		<div class="contentDiv">
+			<div class="contentTitle">
+				<div class="titleNameItem">A&nbsp;/&nbsp;S 신청</div>
+			</div>
+			<hr/>
+			<div class="contentMain">
+			<!-- 의뢰자, 의뢰 목적(제목), 의뢰 내용(내용), 의뢰자 연락처, 의뢰자 주소, 첨부파일, 댓글 -->
+				<div class="writeOrderDiv">
+					<div class="titleItem">의뢰자 (필수)</div>
+					<div class="ItemInputDiv">
+						<input type="text" class="clientNameInput" placeholder="의뢰자를 입력하시오."/>
+					</div>
+					<div class="titleItem">의뢰 비밀번호 (필수)</div>
+					<div class="ItemInputDiv">
+						<input type="text" class="clientPasswordInput" placeholder="비밀번호입력"/>
+					</div>
+					<div class="titleItem">의뢰 제목 (필수)</div>
+					<div class="ItemInputDiv">
+						<input type="text" class="orderTitleInput" placeholder="제목을 입력하시오."/>
+					</div>
+					<div class="titleItem">의뢰자 연락처 (필수)</div>
+					<div class="ItemInputDiv">
+						<input type="text" class="telphoneInput" placeholder="000"/> -
+						<input type="text" class="telphoneInput" placeholder="0000"/> - 
+						<input type="text" class="telphoneInput" placeholder="0000"/>
+					</div>
+					<div class="titleItem textareaItem ">상세내용</div> 
+					<div class="ItemInputDiv textareaItem">
+						<div class="textareaFontItemDiv">
+							<div class="fontItemTitle"> 글자크기 : </div>
+							<div class="fontItem">
+								<select>
+									<option>10pt</option>
+									<option>15pt</option>
+									<option>25pt</option>
+									<option>40pt</option>
+								</select>
+							</div>
+							<div class="fontItemBtn bold">글</div>
+							<div class="fontItemBtn underLine">글</div>
+							<div class="fontItemBtn cancel">글</div>
+						</div>
+						<textarea class="InputContent" placeholder="의뢰 내용을 입력하십시오."></textarea>
+					</div>
+					<div class="titleItem inputFileItem">첨부파일 입력</div>
+					<div class="ItemInputDiv fileInputDiv">
+						<input type="file" class="fileInputBox" />
+						<div class="addfileListDiv">
+						</div>
+					</div>
+				</div>
+				<div class="writeOrderBottom">
+					<input type="button" class="saveOrderBtn" value="확인(OK)">
+					<input type="button" class="previewBtn" value="미리보기">
+					<input type="button" class="cancelOrderBtn" value="취소(Cancel)">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+<hr/>
+	<div class="companyInfo">
+		<div> 관리자 : 박태근(Tel 010-5875-1608)</div>
+		<div> 주소 : 경기도 용인시 처인구 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
+		<div> 대표전화 : 000 - 000 - 0000</div>
+	</div>
+</footer>
+</body>
+</html>
