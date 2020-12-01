@@ -1,14 +1,16 @@
 페이지 구성(frontEnd Construct)
 
+구성(sturctrue)제작 완료
+
 - 기본기능
-1. 메인페이지(main.html)
-2. 소개 메인(introMain.html)
-3. A/S상담(ASList.html)
-4. 공지사항(notice.html)
-5. 로그인(login.html)
-6. MyPage(mypage.html)
-7. 재고목록(StockList.html)
-8. 제작주문(orderList.html)
+1. 메인페이지(main.html) - 완료
+2. 소개 메인(introMain.html) - 완료
+3. A/S상담(ASList.html) - 완료
+4. 공지사항(notice.html) - 완료
+5. 로그인(login.html) - 완료
+6. MyPage(mypage.html) - 
+7. 재고목록(StockList.html) - 완료
+8. 제작주문(orderList.html) - 완료
 
 - 부가 기능
 9. 소개 - 길안내(introMap.html)
