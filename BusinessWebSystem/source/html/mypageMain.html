@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 나중에 구조제작완료후 기능구성 작업들어갈때, jquery 파일 추가-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+// 이곳에 자바스크립트 입력
+// 마우스 기본 이벤트
+function onmouseoverMenu() {
+	var menuName="";
+	$(document).on('mouseover','.horizonStyle',  function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(13,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#6f0c4f');
+		}	
+	});
+
+	var menuName="";
+	$(document).on('mouseover','.verticalStyle',  function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(14, menuName.length);
+	
+		if(menuName == "scheduler") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName =="contractList") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "document") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "elseApp") {
+			$(this).css('background-color', '#6f0c4f');
+		} else if(menuName == "MoveSite") {
+			$(this).css('background-color', '#6f0c4f');
+		}	
+	});
+}
+
+function onmouseoutMenu() {
+	var menuName="";
+	$(document).on('mouseout','.horizonStyle', function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(13,menuName.length);
+	
+		if(menuName == "home") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName =="AS") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "order") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "stock") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "notice") {
+			$(this).css('background-color', '#4c84b9');
+		}
+	});
+
+	$(document).on('mouseout','.verticalStyle', function() {
+		menuName = $(this).attr('class');
+		menuName = menuName.substring(14,menuName.length);
+	
+		if(menuName == "scheduler") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName =="contractList") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "document") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "elseApp") {
+			$(this).css('background-color', '#4c84b9');
+		} else if(menuName == "MoveSite") {
+			$(this).css('background-color', '#4c84b9');
+		}
+	});
+}
+</script>
+<style>
+/* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
+@media (max-width : 1000px) and  (max-height : 1000px){
+	.footer {
+		display 		: none;
+		
+	}
+}
+
+/* 공통부분 */
+.bodyDiv {
+	height			: 900px;
+}
+.topDiv {
+	height			: 50px;
+}
+
+.topLogo {
+	display			: inline-block;
+	float			: left;
+	vertical-align		: middle;
+}
+
+.topLogin {
+	display			: inline-block;
+	border			: 0px;
+	background-color		: #fde6ff;
+	font-size			: 20px;
+	color			: #FFFFFF;
+	float			: right;
+	vertical-align		: middle;
+	margin-right		: 30px;
+	margin-top		: 15px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	padding-top		: 2px;
+	padding-bottom		: 2px;
+}
+
+/*roundBtn 공통*/
+.roundBtn {
+	border-radius		: 5px;
+	border-top-left-radius	: 5px;
+	border-top-right-radius	: 5px;
+	border-bottom-left-radius	: 5px;
+	border-bottom-right-radius	: 5px;
+}
+
+/* 세로 메뉴바 */
+.verticalMenuDiv {
+	width			: 350px;
+	height			: 795px;
+	background-color		: #fef77b;
+	padding-top		: 35px;
+	padding-left		: 15px;
+	float			: left;
+}
+
+/* 가로메뉴바 */
+.horaizontalMenuDiv {
+	height			: 50px;
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-weight		: bold;
+	color			: #FFFFFF;
+}
+/* 메뉴바 스타일 - 가로 */ 
+.horizonStyle {
+	border			: 1px solid #4c84b9;
+	background-color		: #4c84b9;
+	float			: left;
+	margin-left		: 15px;
+	width			: 100px;
+	height			: 30px;
+	padding-top		: 15px;
+}
+/* 메뉴바 스타일 - 세로 */
+.verticalStyle {
+	width			: 310px;
+	height			: 50px;
+	padding-top		: 20px;
+	margin-top		: 1px;
+	border			: 5px solid #6f0c4f; 
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-size			: 25px;
+	font-weight		: bold;
+	color			: #FFFFFF;
+}
+/* mypage기능부분 */
+/*width			: 900px */
+.ApplicationDiv {
+	width			: 784px;
+	height			: 795px;
+	float			: left;
+}
+
+.appTitle {
+	width			: 784px;
+	height			: 60px;
+	
+}
+.appTitle span {
+	position			: absolute;
+	margin-left		: 20px;
+	margin-top		: 20px;
+	font-size			: 26px;
+	font-weight		: bold;
+}
+.appContent {
+	width			: 784px;
+	height			: 735px;
+}
+
+/* 달력에 관한 부분*/
+.calendarMonthDiv {
+	width			: 784px;
+	height			: 50px;
+	font-size			: 26px;
+	font-weight		: bold;
+	text-align			: cneter;
+}
+
+.calendarDiv {
+	width			: 784px;
+	height			: 685px;
+}
+</style>
+</head>
+
+<body>
+<div class="bodyDiv">
+	<div class="topDiv">
+		<div class="topLogo">logo</div>
+		<div class="topLogin roundBtn"> 로그아웃 </div>
+	</div>
+	<hr/>
+	<div class="middleDiv">
+		<!-- 상단 가로줄 메뉴 -->
+		<div class="horaizontalMenuDiv">
+			<div class="horizonStyle AS" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> AS 목록</div>
+			<div class="horizonStyle order" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 제작 현황 </div>
+			<div class="horizonStyle stock" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 재고 확인 </div>
+			<div class="horizonStyle notice" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 공지사항 </div>
+		</div>
+		<!-- 상단 세로줄 메뉴 -->
+		<div class="verticalMenuDiv">
+			<div class="verticalStyle scheduler" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick="">스케줄러</div>
+			<div class="verticalStyle contractList" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 계약서일람 </div>
+			<div class="verticalStyle document" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 서류 양식 </div>
+			<div class="verticalStyle elseApp" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 기타기능 </div>
+			<div class="verticalStyle MoveSite" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 사이트이동 </div>
+		</div>
+		<div class="ApplicationDiv">
+			<div class="appTitle"><span>▣ 기능입니다</span></div>
+			<div class="appContent">
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
