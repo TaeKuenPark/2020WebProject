@@ -8,7 +8,7 @@
 3. A/S상담(ASList.html) - 완료
 4. 공지사항(notice.html) - 완료
 5. 로그인(login.html) - 완료
-6. MyPage(mypage.html) - 
+6. MyPage(mypage.html) - 완료
 7. 재고목록(StockList.html) - 완료
 8. 제작주문(orderList.html) - 완료
 
