@@ -1,0 +1,60 @@
+<style>
+/* 공통부품 css */
+/* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
+@media (max-width : 1000px) and  (max-height : 1000px){
+	.footer {
+		display 		: none;
+		
+	}
+}
+
+.topConponent {
+	font-weight		: bold;
+	padding-bottom		: 10px;
+}
+
+.bodyDiv {
+	height			: 900px;
+}
+
+/* 상단 메뉴 */
+.topDiv {
+	height			: 50px;
+}
+
+
+/* 로고 */
+.topConponent {
+	font-weight		: bold;
+	padding-bottom		: 10px;
+}
+.topLogo {
+	display			: inline-block;
+	float			: left;
+	vertical-align		: middle;
+}
+/* 로그인 */
+.topLogin {
+	display			: inline-block;
+	border			: 0px;
+	background-color		: #fde6ff;
+	font-size			: 20px;
+	color			: #FFFFFF;
+	float			: right;
+	vertical-align		: middle;
+	margin-right		: 10px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	padding-bottom		: 2px;
+	padding-bottom		: 2px;
+}
+
+/* 둥근 버튼 설정 레이아웃 */
+.roundBtn {
+	border-radius		: 5px;
+	border-top-left-radiu	: 5px;
+	border-top-right-radius	: 5px;
+	border-bottom-left-radius	: 5px;
+	border-bottom-right-radius	: 5px;
+}
+</style>
