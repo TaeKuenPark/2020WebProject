@@ -1,0 +1,2 @@
+https://ok-chklist.readthedocs.io/ko/latest/06_InputValidationTesting/OTG-INPVAL-005.html
+sql Injection 관련 공부 참고
