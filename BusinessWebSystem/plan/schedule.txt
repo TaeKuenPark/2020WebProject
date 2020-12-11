@@ -8,7 +8,7 @@
 - css 통합 미완료
 
 1. css 통합및 설정 (주말예정)
-  - 통합 css : Common.css
+  - 통합 css : Common.css - > 마이페이지 - 스케쥴러(scheduler.html)html(가장 최신)을 기준으로 하여 모든 html의 css를 통일
   - 메인페이지 : main.css
   - 글쓰기관련 html : write.css
   - 글확인관련 html : view.css
