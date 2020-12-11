@@ -22,7 +22,6 @@
 	height			: 50px;
 }
 
-
 /* 로고 */
 .topConponent {
 	font-weight		: bold;
@@ -56,5 +55,47 @@
 	border-top-right-radius	: 5px;
 	border-bottom-left-radius	: 5px;
 	border-bottom-right-radius	: 5px;
+}
+
+/* 세로 메뉴바 */
+.verticalMenuDiv {
+	width			: 350px;
+	height			: 795px;
+	background-color		: #fef77b;
+	padding-top		: 35px;
+	padding-left		: 15px;
+	float			: left;
+}
+
+/* 가로메뉴바 */
+.horaizontalMenuDiv {
+	height			: 50px;
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-weight		: bold;
+	color			: #FFFFFF;
+}
+/* 메뉴바 스타일 - 가로 */ 
+.horizonMenu {
+	border			: 1px solid #4c84b9;
+	background-color		: #4c84b9;
+	float			: left;
+	margin-left		: 15px;
+	width			: 100px;
+	height			: 30px;
+	padding-top		: 15px;
+}
+/* 메뉴바 스타일 - 세로 */
+.verticalMenu {
+	width			: 310px;
+	height			: 50px;
+	padding-top		: 20px;
+	margin-top		: 1px;
+	border			: 5px solid #6f0c4f; 
+	background-color		: #4c84b9;
+	text-align			: center;
+	font-size			: 25px;
+	font-weight		: bold;
+	color			: #FFFFFF;
 }
 </style>
