@@ -145,7 +145,7 @@ $(window).resize(function() {
 	margin-left		: 35px;
 }
 /* 글작성 콘텐츠 레이아웃 */
-.writeOrderDiv {
+.orderViewDiv {
 	border			: 2px solid #000000;
 	width			: 700px;
 	height			: 500px;
@@ -168,18 +168,21 @@ $(window).resize(function() {
 	border			: 2px solid #000000;
 	width			: 696px;
 	height			: 20px;
-	padding-top		: 5px;
-	padding-bottom		: 15px;
+	padding-top		: 10px;
+	padding-bottom		: 10px;
 }
 
-.ItemInputDiv input[type="text"], input[type="file"] {
-	padding-left		: 10px;;
+.telephoneNumDiv {
+	border			: 2px solid #000000;
+	width			: 512px;
+	height			: 40px;
+	float			: left;
+}
+
+.ItemInputDiv div {
 	margin-left		: 20px;
-	height			: 25px;
-	font-size			: 20px;
-	font-weight		: bold;
+	float			: left;
 }
-
 .explainOrderDiv textarea {
 	padding-left		: 5px;
 	font-size			: 15px;
@@ -201,37 +204,37 @@ $(window).resize(function() {
 	width			: 50px;
 }
 
-.InputContent {
-	width			: 508px;
-	height			: 133px;
-}
-
-.addFileInput {
-	width			: 450px;
-}
-
 .textareaFontItemDiv {
 	height			: 55px;
 }
 
-.textareaItem {
+.viewTextItem {
+	height			: 100px;
+	padding-top		: 0px;
+	padding-bottom		: 0px;
+}
+/* 상세내용의 프레임 레이아웃 */
+.viewContentItem {
 	height			: 200px;
 	padding-top		: 0px;
 	padding-bottom		: 0px;
 }
 
+.inputContent {
+	border 			: 2px solid #000000;
+	float			: right;
+	width			: 512px;
+}
+
 /* 상세내용 글꼴 설정 요소 레이아웃*/
-.textareaFontItemDiv {
-	border			: 1px solid #000000;
-	width			: 507px;
+.toolDiv {
+	width			: 672px;
 	padding-left		: 5px;
 	padding-top		: 5px;
 	float			: left;
 }
 
-.fileInputDiv {
-	height			: 98px;
-}
+
 .fontItemTitle {
 	float			: left;
 }
@@ -264,21 +267,32 @@ $(window).resize(function() {
 	font-size			: 18px;
 }
 
-.inputFileItem {
-	height			: 98px;
+.telephoneNum {
+	width			: 300px;
+}
+.telephoneNum div {
+	border			: 1px solid #000000;
+	width			: 50px;
+	height			: 30px;
+	float			: left;
+	margin-top		: 5px;
+	margin-left		: 15px;
 }
 
-.bold {
-	font-weight		: bold;
+.telephoneNum  span {
+	margin-top		: 5px;
+	margin-left		: 15px;
+	font-size			: 25px;
+	float			: left;
 }
 
-.underLine {
-	text-decoration		: underline;
-}
+/* 첨부파일부분 */
+.viewAttachFile {
+	height			: 102px;
+	padding-top		: 0px;
+	padding-bottom		: 0px;
+}	
 
-.cancel {
-	text-decoration		: line-through;
-}
 </style>
 </head>
 
@@ -303,29 +317,27 @@ $(window).resize(function() {
 			<hr/>
 			<div class="contentMain">
 			<!-- 의뢰자, 의뢰 목적(제목), 의뢰 내용(내용), 의뢰자 연락처, 의뢰자 주소, 첨부파일, 댓글 -->
-				<div class="writeOrderDiv">
-					<div class="titleItem">의뢰자 (필수)</div>
+				<div class="orderViewDiv">
+					<div class="titleItem">의뢰자 </div>
 					<div class="ItemInputDiv">
-						<input type="text" class="clientNameInput" placeholder="의뢰자를 입력하시오."/>
+						<div class="clientName">홍W홍+홍길동</div>
 					</div>
-					<div class="titleItem">의뢰 비밀번호 (필수)</div>
+					<div class="titleItem">의뢰 제목 </div>
 					<div class="ItemInputDiv">
-						<input type="text" class="clientPasswordInput" placeholder="비밀번호입력"/>
+						<div class="orderName">WWWWWWWW뷀뷀뷁뷁</div>
 					</div>
-					<div class="titleItem">의뢰 제목 (필수)</div>
-					<div class="ItemInputDiv">
-						<input type="text" class="orderTitleInput" placeholder="제목을 입력하시오."/>
+					<div class="titleItem">의뢰자 연락처</div>
+					<div class="telephoneNumDiv">
+						<div class="telephoneNum">
+							<div class="fristNum"></div><span>-</span>
+							<div class="middleNum"></div><span>-</span>
+							<div class="endNum"></div>
+						</div>
 					</div>
-					<div class="titleItem">의뢰자 연락처 (필수)</div>
-					<div class="ItemInputDiv">
-						<input type="text" class="telphoneInput" placeholder="000"/> -
-						<input type="text" class="telphoneInput" placeholder="0000"/> - 
-						<input type="text" class="telphoneInput" placeholder="0000"/>
-					</div>
-					<div class="titleItem textareaItem ">상세내용</div> 
-					<div class="ItemInputDiv textareaItem">
-						<div class="textareaFontItemDiv">
-							<div class="fontItemTitle"> 글자크기 : </div>
+					
+					<div class="ItemInputDiv viewTextItem">
+						<div class="toolDiv">
+							<div class="fontItemTitle"> 돋보기 : </div>
 							<div class="fontItem">
 								<select>
 									<option>10pt</option>
@@ -334,23 +346,19 @@ $(window).resize(function() {
 									<option>40pt</option>
 								</select>
 							</div>
-							<div class="fontItemBtn bold">글</div>
-							<div class="fontItemBtn underLine">글</div>
-							<div class="fontItemBtn cancel">글</div>
-						</div>
-						<textarea class="InputContent" placeholder="의뢰 내용을 입력하십시오."></textarea>
+					          </div>
 					</div>
-					<div class="titleItem inputFileItem">첨부파일 입력</div>
-					<div class="ItemInputDiv fileInputDiv">
-						<input type="file" class="fileInputBox" />
-						<div class="addfileListDiv">
-						</div>
+					<div class="titleItem viewContentItem">상세내용</div>
+					<div class="inputContent viewContentItem">가나다라마바사아자차카하ABCDEFGHIJK뷀뷁뷁뷁뷁</div>
+					<div class="titleItem viewAttachFile">첨부파일</div>
+					<div class="inputContent viewAttachFile"></div>	
 					</div>
+					 
 				</div>
 				<div class="writeOrderBottom">
-					<input type="button" class="saveOrderBtn" value="확인(OK)">
-					<input type="button" class="previewBtn" value="미리보기">
-					<input type="button" class="cancelOrderBtn" value="취소(Cancel)">
+					<input type="button" class="BackBtn" value="뒤로가기">
+					<input type="button" class="reWriteBtn" value="수 정">
+					<input type="button" class="cancelOrderBtn" value="의뢰 취소">
 				</div>
 			</div>
 		</div>
