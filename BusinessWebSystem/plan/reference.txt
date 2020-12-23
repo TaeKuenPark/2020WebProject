@@ -7,11 +7,13 @@ sql Injection 관련 공부 참고
 /* 현재 윈도우의 크기측정 */
 
 <script type="text/javascript">
-				$(window).resize(function() {
-					$('.contentTitle span').remove();
- 					checkWindowSize('contentTitle');
 
-				// 메뉴부분 크기 조절396px
-				resizeContentWidth('contentDiv', 396)
-				});
+	$(window).resize(function() {
+	$('.contentTitle span').remove();
+ 	checkWindowSize('contentTitle');
+
+	// 메뉴부분 크기 조절396px
+	resizeContentWidth('contentDiv', 396)
+	});
+	
 </script>
