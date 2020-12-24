@@ -1,0 +1,22 @@
+<style>
+/* 소개페이지 공통 css*/
+.contentDiv {
+	width			: 69.5%;
+	margin-left		: 15px;
+	float			: left;
+}
+
+.contentTitle {
+	position			: relative;
+	height			: 50px;
+	font-weight		: bold;
+	font-size			: 30px;
+	top			: 18px;
+	left			: 8px;
+}
+
+.footer {
+	height			: 100px;
+}
+
+</style>
