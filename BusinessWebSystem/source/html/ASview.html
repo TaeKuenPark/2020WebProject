@@ -8,9 +8,9 @@
 // 메뉴 버튼 이벤트(마우스 접근)
 function onmouseoverMenu() {
 	var menuName="";
-	$(document).on('mouseover','.menuBar',  function() {
+	$(document).on('mouseover','.horizonStyle',  function() {
 		menuName = $(this).attr('class');
-		menuName = menuName.substring(8,menuName.length);
+		menuName = menuName.substring(13,menuName.length);
 	
 		if(menuName == "home") {
 			$(this).css('background-color', '#6f0c4f');
@@ -28,9 +28,9 @@ function onmouseoverMenu() {
 // 메뉴 버튼 이벤트(마우스 탈출)
 function onmouseoutMenu() {
 	var menuName="";
-	$(document).on('mouseout','.menuBar', function() {
+	$(document).on('mouseout','.horizonStyle', function() {
 		menuName = $(this).attr('class');
-		menuName = menuName.substring(8,menuName.length);
+		menuName = menuName.substring(13,menuName.length);
 	
 		if(menuName == "home") {
 			$(this).css('background-color', '#4c84b9');
@@ -110,23 +110,22 @@ $(window).resize(function() {
 
 /* 가로 메뉴 레이아웃 */
 
-.menuDiv {
+.horaizontalMenuDiv {
 	height			: 50px;
 	background-color		: #4c84b9;
 	text-align			: center;
 	font-weight		: bold;
 	color			: #FFFFFF;
-	
 }
 
-.menuBar {
+.horizonStyle {
 	border			: 1px solid #4c84b9;
 	background-color		: #4c84b9;
 	float			: left;
 	margin-left		: 15px;
 	width			: 100px;
 	height			: 30px;
-	padding-top		: 15px;	
+	padding-top		: 15px;
 }
 
 
@@ -304,11 +303,11 @@ $(window).resize(function() {
 	</div>
 	<hr/>
 	<div class="middleDiv">
-		<div class="menuDiv">
-			<div class="menuBar AS" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> AS 목록</div>
-			<div class="menuBar order" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 제작 현황 </div>
-			<div class="menuBar stock" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 재고 확인 </div>
-			<div class="menuBar notice" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 공지사항 </div>
+		<div class="horaizontalMenuDiv">
+			<div class="horizonStyle AS" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> AS 목록</div>
+			<div class="horizonStyle order" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 제작 현황 </div>
+			<div class="horizonStyle stock" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 재고 확인 </div>
+			<div class="horizonStyle notice" onmouseover="onmouseoverMenu()" onmouseout="onmouseoutMenu()" onclick=""> 공지사항 </div>
 		</div>
 		<div class="contentDiv">
 			<div class="contentTitle">
