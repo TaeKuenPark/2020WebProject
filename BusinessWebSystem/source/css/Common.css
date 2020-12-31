@@ -1,16 +1,11 @@
 <style>
 /* 공통부품 css */
 /* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
-@media (max-width : 1000px) and  (max-height : 1000px){
+@media screen and (max-width : 1000px), screen and (max-height : 1000px){
 	.footer {
 		display 		: none;
 		
 	}
-}
-
-.topConponent {
-	font-weight		: bold;
-	padding-bottom		: 10px;
 }
 
 .bodyDiv {
@@ -97,5 +92,13 @@
 	font-size			: 25px;
 	font-weight		: bold;
 	color			: #FFFFFF;
+}
+/* 숨김, 숨김해제  */
+.exposeMenu {
+	display			: block;
+}
+
+.hideMenu {
+	display			: none;
 }
 </style>

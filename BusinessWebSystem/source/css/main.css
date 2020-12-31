@@ -1,0 +1,132 @@
+<style>
+.mainBodyDiv {
+	height			: 1200px;
+}
+.menuDiv {
+	font-weight		: bold;
+}
+
+.menuComponent {
+	width			: 100%;
+	height			: 45px;
+	background-color		: #4b5f81;
+}
+.menuList {
+	border			: 1px solid #4b5f81;
+	width			: 150px;
+	height			: 10px;
+	text-decoration 		: none;
+	text-align			: center;
+	color			: #FFFFFF;
+	font-size			: 18px;
+	padding-top		: 10px;
+	padding-bottom		: 20px;
+	float			: left
+}
+
+.menuList a {
+	text-decoration		: none;
+	color			: #FFFFFF;
+}
+.dropDownMenu {
+	position			: relative;
+	z-index			: 2;
+}
+.dropDownIntroDiv {
+   
+}
+
+.dropDownASDiv {
+	margin-left		: 152px;
+   
+}
+
+.dropDownOrderDiv {
+	margin-left		: 305px;
+   
+}
+
+.dropDownStockDiv {
+	margin-left		: 455px;
+   
+}
+
+ul.dropDownList {
+	padding-left		: 0px;
+	margin-top		: 0px;
+	margin-bottom		: 0px;
+}
+
+ul.dropDownList li {
+	width			: 150px;
+	list-style			: none;
+	text-align			: center;
+	font-size			: 18px;
+	border			: 1px solid #4b5f81;
+	padding-top		: 10px;
+	padding-bottom		: 10px;
+	background-color		: #4b5f81;
+}
+
+ul.dropDownList li a {
+	text-decoration		 : none;
+    	color			: #FFFFFF;
+}
+/* 중단부 */
+.middleDiv {
+	position			: absolute;
+	width			: 1885px;
+	height			: 600px;
+	border			: 1px solid #000000;
+	top			: 100px;
+	background		: #1ab1ad url(../img/banner.png);
+}
+
+
+/* 로고 이미지 */
+.mainImgDiv {
+	position			: absolute;
+	border			: 1px solid #000000;
+	left			: 350px;
+	top			: 40px;
+	width			: 1200px;
+	height			: 500px;
+}
+
+.mainImgDiv Img {
+	width			: 1200px;
+	height			: 500px;
+}
+
+.scrollBtn {
+	position			: absolute;
+	top			: 515px;
+	left			: 600px;
+	width			: 100px;
+	height			: 30px;
+	border			: 1px solid #000000;
+}
+
+.scrollBtn div {
+	float			: left;
+	margin-top		: 3px;
+	margin-left		: 5px;
+	font-size			: 25px;
+}
+/* 하단부 */
+.bottomDiv {
+	position			: absolute;
+	border			: 1px solid #000000;
+	width			: 1885px;
+	height			: 200px;
+	top			: 700px;
+	background		: f6f6f6;
+}
+.footer {
+	position			: absolute;
+	bottom			: -430px;
+	width			: 1885px;
+	height			: 150px;
+    
+}
+</style>
