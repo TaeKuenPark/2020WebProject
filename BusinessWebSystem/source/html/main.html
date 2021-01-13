@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <!-- css -->
 <link href="../css/Common.css" rel="stylesheet">
 <link href="../css/main.css" rel="stylesheet">
@@ -23,6 +23,7 @@ clickflg_as=0;
 clickflg_order=0;
 clickflg_stock=0;
 
+// 상단메뉴 마우스 접근시 이벤트
 function onHoverMenuList(menuNum) {
 	
 	$(".dropDownIntroDiv").addClass('hideMenu');
@@ -40,7 +41,7 @@ function onHoverMenuList(menuNum) {
 		$(".dropDownStockDiv").removeClass('hideMenu');
 	}
 }
-
+// 상단 메뉴 클릭시 전환 이벤트
 function onClickMenuList(menuNum) {
 	if(menuNum == 1 && clickflg_intro == 0) {
 		$(".dropDownIntroDiv").addClass('hideMenu');
@@ -75,7 +76,7 @@ function onClickMenuList(menuNum) {
 		clickflg_stock =0;
 	} 
 } 
-
+// 스크롤 이미지 조정하는 스크립트
 function moveAdvantiseImage(btn) {
 	
 	var url ="../img/test"+btn+".png";
@@ -137,6 +138,70 @@ function moveAdvantiseImage(btn) {
 	
 	// 그림을 바꾼다
 	$("#imgContent").attr("src", url);
+}
+
+// 이동 아이콘 영역 클릭시 이벤트
+// 해당 페이지로 이동
+function clickMoveIcon(btn) {
+	if (btn == 1) {
+		location.herf("")	// URL 추가 예정 : 회사 소개 페이지 연결(모바일로 접근시 전화 연결)
+	} else if (btn == 2) {
+		location.herf("")	// URL 추가 예정 : AS목록 페이지 연결
+	} else if (btn == 3) {
+		location.herf("")	// URL 추가 예정 :  주문 목록 페이지 연결
+	} else if (btn == 4) {
+		location.herf("")	// URL 추가 예정 : 재고 목록 페이지 연결
+	}
+}
+
+// 이동 아이콘 영역 접근시 이벤트
+function onHoverMoveIcon(btn) {
+	if (btn == 1) {
+		$("#callIcon").animate( {
+			'background-color'	: '#bbdefb'
+		}, 200);
+
+	} else if (btn == 2) {
+		$("#ASIcon").animate( {
+			'background-color'	: '#bbdefb'
+		}, 200);
+
+	} else if (btn == 3) {
+		$("#orderIcon").animate( {
+			'background-color'	: '#bbdefb'
+		}, 200);
+
+	} else if (btn == 4) {
+		$("#stockIcon").animate( {
+			'background-color'	: '#bbdefb'
+		}, 200);
+
+	}
+}
+
+// 이동 아이콘 영역 탈출시 이벤트
+function outMouseIcon(btn) {
+	if (btn == 1) {
+		$("#callIcon").animate( {
+			'background-color'	: '#2699fb'
+		}, 200);
+
+	} else if (btn == 2) {
+		$("#ASIcon").animate( {
+			'background-color'	: '#2699fb'
+		}, 200);
+
+	} else if (btn == 3) {
+		$("#orderIcon").animate( {
+			'background-color'	: '#2699fb'
+		}, 200);
+
+	} else if (btn == 4) {
+		$("#stockIcon").animate( {
+			'background-color'	: '#2699fb'
+		}, 200);
+
+	}
 }
 </script>
 
@@ -202,7 +267,29 @@ function moveAdvantiseImage(btn) {
 	</div>
 </div>
 <div class="bottomDiv">
-하단 메세지
+	<div class="advantiseSentence">
+		<p>이하는 홍보문구 작성입니다.</p>
+		<p>다음과 같은 내용이 작성됩니다. 가계 홍보, 현재 회사내의 이슈</p>
+		<p>지향점, 미션, 발전방향 등 홍보 글귀가 들어갑니다.</p>
+	</div>
+	<div class="comfortMoveBtn">
+		<div class="MoveIcon roundBtn" id="callIcon" onclick="clickMoveIcon(1)" onmouseover="onHoverMoveIcon(1)" onmouseout="outMouseIcon(1)">
+			<div class="icon"><img src="../img/CallIcon.png"></div>
+			<div class="itemName"><hr/>전화 문의</div>
+		</div>
+		<div class="MoveIcon roundBtn" id="ASIcon" onclick="clickMoveIcon(2)" onmouseover="onHoverMoveIcon(2)" onmouseout="outMouseIcon(2)">
+			<div class="icon"><img src="../img/ASIcon.png"></div>
+			<div class="itemName"><hr/>A / S 문의</div>
+		</div>
+		<div class="MoveIcon roundBtn" id="orderIcon" onclick="clickMoveIcon(3)" onmouseover="onHoverMoveIcon(3)" onmouseout="outMouseIcon(3)">
+			<div class="icon"><img src="../img/OrderIcon.png"></div>
+			<div class="itemName"><hr/> 주문 의뢰 문의</div>
+		</div>
+		<div class="MoveIcon roundBtn" id="stockIcon" onclick="clickMoveIcon(4)" onmouseover="onHoverMoveIcon(4)" onmouseout="outMouseIcon(4)">
+			<div class="icon"><img src="../img/StockIcon.png"></div>
+			<div class="itemName"><hr/> 제품 / 재고 확인</div>
+		</div>
+	</div>
 </div>
 </div>
 </body>
