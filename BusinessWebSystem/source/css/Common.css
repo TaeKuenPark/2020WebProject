@@ -12,6 +12,9 @@
 	height			: 900px;
 }
 
+.mainBodyDiv {
+	height			: 1025px;
+}
 /* 상단 메뉴 */
 .topDiv {
 	height			: 50px;

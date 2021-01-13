@@ -1,22 +1,103 @@
 <style>
-/* 소개페이지 공통 css*/
-.contentDiv {
-	width			: 69.5%;
-	margin-left		: 15px;
+/* 소개페이지 css */
+/* 1000x1000px 크기를 기준 차후에 모바일, 테블릿, PC용 css를 나눌예정*/
+@media (max-width : 1000px) and  (max-height : 1000px){
+	.footer {
+		display 		: none;
+		
+	}
+}
+/* 중단부 */
+
+.bodyDiv {
+	background-color		: #f9f6f8; 
+	font-size			: 14px;
+}
+.menuDiv {
+	width			: 1252px;
+	height			: 40px;
+	background-color		: #4b5f81;
+	
+}
+
+.menuListDiv {
+	margin-left		: 60px;
+}
+
+.menuList {
 	float			: left;
-}
-
-.contentTitle {
-	position			: relative;
-	height			: 50px;
+	margin-left		: 70px;
+	padding-top		: 14px;
 	font-weight		: bold;
-	font-size			: 30px;
-	top			: 18px;
-	left			: 8px;
+	color			: #FFFFFF;
 }
 
-.footer {
-	height			: 100px;
+.dropDownMenu {
+	margin-left		: 100px;
 }
 
+ul.dropDownList {
+	float			: left;
+	margin-top		: 0px;
+	margin-bottom		: 0px;
+	padding-left		: 0px;
+}
+
+ul.dropDownList li {
+	list-style			: none;
+	text-align			: center;
+	width			: 130px;
+	height			: 25px;
+	padding-top		: 15px;
+	background-color		: #4b5f81;
+}
+
+ul.dropDownList li a {
+	color			: #FFFFFF;
+	text-decoration		: none;
+}
+.dropDownIntroList {
+	display			: none;
+}
+
+.dropDownASList {
+	display			: none;
+	margin-left		: 130px;
+}
+
+.dropDownOrderList {
+	display			: none;
+	margin-left		: 260px;
+}
+
+.dropDownStockList {
+	display			: none;
+	margin-left		: 390px;
+}
+
+/* 중단부 */
+.middleDiv {
+	width			: 1252px;
+}
+
+.contentList {
+	float			: left;
+	background-color		: #FFFFFF;
+	width			: 252px;
+}
+
+.contentDiv {
+	float			: left;
+	width			: 1000px;
+}
+/* 사라지는 이벤트*/
+
+.viewMenu {
+	display			: block;
+}
+
+/* 하단부*/
+.bottomDiv {
+
+}
 </style>

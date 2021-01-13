@@ -1,7 +1,4 @@
 <style>
-.mainBodyDiv {
-	height			: 1200px;
-}
 .menuDiv {
 	font-weight		: bold;
 }
@@ -75,58 +72,106 @@ ul.dropDownList li a {
 /* 중단부 */
 .middleDiv {
 	position			: absolute;
-	width			: 1885px;
-	height			: 600px;
-	border			: 1px solid #000000;
+	width			: 1252px;
+	height			: 525px;
 	top			: 100px;
 	background		: #1ab1ad url(../img/banner.png);
+	background-size		: cover;
 }
 
 
 /* 로고 이미지 */
 .mainImgDiv {
 	position			: absolute;
-	border			: 1px solid #000000;
-	left			: 350px;
+	left			: 100px;
 	top			: 40px;
-	width			: 1200px;
-	height			: 500px;
+	width			: 1000px;
+	height			: 400px;
 }
 
 .mainImgDiv Img {
-	width			: 1200px;
-	height			: 500px;
+	width			: 1000px;
+	height			: 400px;
 }
 
 .scrollBtn {
 	position			: absolute;
-	top			: 515px;
-	left			: 600px;
-	width			: 100px;
+	top			: 415px;
+	left			: 450px;
+	width			: 150px;
 	height			: 30px;
-	border			: 1px solid #000000;
 }
 
 .scrollBtn div {
 	float			: left;
 	margin-top		: 3px;
 	margin-left		: 5px;
+	font-weight		: bold;
 	font-size			: 25px;
 }
 /* 하단부 */
 .bottomDiv {
 	position			: absolute;
-	border			: 1px solid #000000;
-	width			: 1885px;
-	height			: 200px;
-	top			: 700px;
-	background		: f6f6f6;
+	width			: 1252px;
+	height			: 400px;
+	top			: 630px;
+	background		: #f6f6f6;
 }
-.footer {
-	position			: absolute;
-	bottom			: -430px;
-	width			: 1885px;
+
+.advantiseSentence {
+	width			: 1850px;
+	height			: 200px;
+	margin-top		: 20px;
+	margin-left		: 20px;
+	font-weight		: bold;
+	font-size			: 18px;
+}
+
+.advantiseSentence p {
+	margin-top		: 5px;
+	margin-bottom		: 5px;
+}
+
+.comfortMoveBtn {
+	width			: 1535px;
 	height			: 150px;
+	margin-left		: 100px;
+}
+
+.MoveIcon {
+	float			: left;
+	width			: 150px;
+	height			: 150px;
+	margin-right		: 150px;
+	background-color		: #2699fb;
+}
+
+.MoveIcon img {
+	width			: 140px;
+	height			: 100px;
+	padding-top		: 8px;
+	padding-left		: 4px;
+	padding-right		: 4px;
+	padding-bottom		: 10px;
+}
+
+.MoveIcon .icon {
+	height			: 105px;
+}
+
+.MoveIcon .itemName {
+	height			: 22px;
+	padding-top		: 5px;
+	text-align			: center;
+	font-weight		: bold;
+	color			: #FFFFFF;
+	font-size			: 16px;
+}
+/* 꼬리말 */
+.footer {
+	width			: 1252px;
+	height			: 218px;
+	font-size			: 12px;
     
 }
 </style>
