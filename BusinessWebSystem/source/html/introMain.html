@@ -9,8 +9,12 @@
 
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript">
 // 이곳에 스크립트 입력
+// 매개변수
+var lastLeftTap = 0;
+
 // 마우스 메뉴 접근
 function onmouseoverMenu(num) {
 	$("#dropDownIntroDiv").removeClass('viewMenu');
@@ -56,6 +60,61 @@ function onClickMenuList(num) {
 
 }
 
+// 탭 접근 이벤트
+function onmouseenterLeftTap(num) {
+
+	if( lastLeftTap  != num) {
+		for (i =1 ; i <= 3 ; i++) {
+		var target = '#leftTapItem'+i;
+		$(target).animate( {
+			width		: '0px'
+		}, 100 );
+		}
+	} 
+	
+	var target = '#leftTapItem'+num;
+
+		$(target).animate( {
+			width : '154px'
+		}, 100);
+
+	lastLeftTap  = num;
+	
+}
+// 탭 이탈 이벤트
+function onmouseleaveLeftTap(num) {
+
+		for (i =1 ; i <= num ; i++) {
+		var target = '#leftTapItem'+i;
+		$(target).animate( {
+			width		: '0px'
+		}, 100 );
+		}
+}
+
+// 탭클릭 이벤트
+function onmouseclickLeftTap(num) {
+
+	var target = '$leftTapTitle'+num;
+
+	for (var i =1; i <=3 ; i++) {
+		$('#leftTapTitle'+i).css('background-color', '#FFFFFF');
+	}
+
+	$('#leftTapTitle'+num).css('background-color', '#f3e7ef');
+
+	$('#companyIntro').hide();
+	$('#callquestion').hide();
+	$('#roadmap').hide();
+
+	if( num == 1 ) {
+		$('#companyIntro').show();
+	} else if( num == 2 ) {
+		$('#callquestion').show();
+	} else if( num == 3 ) {
+		$('#roadmap').show();
+	}
+}
 // (Common) 윈도우 크기 계산 표시형삭 -> Winsize = width  x height
 function checkWindowSize(inputItem) {
 	var windowWidth = $(window).width();
@@ -120,11 +179,51 @@ function resizeContentWidth(content, resizelength) {
 		</div>
 	</div>
 	<div class="middleDiv">
-		<div class="contentList">
-			<div class="contentName">전화상담</div>
-			<div class="contentName">오시는길</div>
+		<div class="contentList title" >
+			<div class="contentName">회사소개</div>
 		</div>
-		<div class="contentDiv">M</div>
+		<div class="contentList content">
+				<div class ="leftTapItem" id ="leftTapItem1" onmouseleave="onmouseleaveLeftTap(3)" onclick="onmouseclickLeftTap(1)"></div>
+				<div class="contentName"  id="leftTapTitle1" onmouseenter="onmouseenterLeftTap(1)" onclick="onmouseclickLeftTap(1)">회사소개</div>
+
+				<div class ="leftTapItem" id ="leftTapItem2" onmouseleave="onmouseleaveLeftTap(3)" onclick="onmouseclickLeftTap(2)"></div>
+				<div class="contentName" id="leftTapTitle2" onmouseenter="onmouseenterLeftTap(2)" onclick="onmouseclickLeftTap(2)">전화상담</div>
+
+				<div class ="leftTapItem" id ="leftTapItem3" onmouseleave="onmouseleaveLeftTap(3)" onclick="onmouseclickLeftTap(3)"></div>
+				<div class="contentName" id="leftTapTitle3" onmouseenter="onmouseenterLeftTap(3)" onclick="onmouseclickLeftTap(3)">오시는길</div>
+			
+		</div>
+		<div class="backcoverDiv" ></div>
+		<div id="companyIntro">
+			<div class="companyTitle">회 사 명 을 입 력 해 주십시오.</div>
+			<div class="companyIntro">
+				<p>안녕하세요?</p>
+			</div>
+		</div>
+		<div  id="callquestion">
+			<div class="companyTitle">회 사 명 을 입 력 해 주십시오.</div>
+			<div class="companyIntro">
+				<p>전화상담은 아래로 부탁드립니다. </p>
+				<p> 견적 상담</p>
+				<p> 담 당 자  : </p>
+				<p> 연 락 처 : </p>
+				<p> </p>
+				<p> 대표 전화</p>
+				<p> 연락처 : </p>
+				<p> E-Mail (메일 문의)</p>
+				<p></p>
+			</div>
+		</div>
+		<div id="roadmap">
+			<div class="companyTitle" >회 사 명 을 입 력 해 주십시오.</div>
+			<div class="companyIntro">
+				<p>- 오시는 길</p>
+				<p><span>주소 : </span><span>경기도 용인시 처인구 ㅇㅇㅇㅇ ㅇㅇㅇㅇㅇ</span></p>
+				<p><img src=""/></p>
+				<p></p>
+				<p>- 구글맵스로 이동</p>
+			</div> 
+		</div>
 	</div>
 	<div class="bottomDiv"></div>
 </div>
