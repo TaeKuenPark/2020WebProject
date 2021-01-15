@@ -14,14 +14,13 @@
 	font-size			: 14px;
 }
 .menuDiv {
-	width			: 1252px;
 	height			: 40px;
 	background-color		: #4b5f81;
 	
 }
 
 .menuListDiv {
-	margin-left		: 60px;
+	margin-left		: 120px;
 }
 
 .menuList {
@@ -33,7 +32,9 @@
 }
 
 .dropDownMenu {
-	margin-left		: 100px;
+	position			: relative;
+	margin-left		: 160px;
+	z-index			: 2;
 }
 
 ul.dropDownList {
@@ -46,9 +47,10 @@ ul.dropDownList {
 ul.dropDownList li {
 	list-style			: none;
 	text-align			: center;
-	width			: 130px;
+	width			: 115px;
 	height			: 25px;
-	padding-top		: 15px;
+	padding-top		: 10px;
+	padding-bottom		: 5px;
 	background-color		: #4b5f81;
 }
 
@@ -76,19 +78,89 @@ ul.dropDownList li a {
 }
 
 /* 중단부 */
+/* 왼쪽 : 컨텐츠 소개 */
 .middleDiv {
 	width			: 1252px;
 }
 
 .contentList {
+	position			: absolute;
 	float			: left;
 	background-color		: #FFFFFF;
-	width			: 252px;
+	width			: 155px;
 }
 
-.contentDiv {
+.contentName {
+	text-align			: center;
+	font-weight		: bold;
+}
+
+.contentList.title {
+	margin-top		: 10px;
+	padding-top		: 10px;
+	width			: 150px;
+	height			: 20px;
+	border			: 4px solid #f3e7ef;
+}
+
+.contentList.content {
+	margin-top		: 50px;
+	height			: 750px;
+}
+
+.contentList.content .contentName {
+	padding-top		: 10px;
+	padding-bottom		: 10px;
+	margin-top		: 10px;
+	border			: 1px solid #f3e7ef;
+}
+
+.contentList.content {
+	border			: 1px solid #f3e7ef;
+	height			: 480px;
+}
+
+.leftTapItem {
+	position			: absolute;
+	height			: 38px;
+	margin-top		: 10px;
+	background-color		: #1d053a;
+	opacity			: 0.5;
+}
+
+.backcoverDiv {
+	position			: absolute;
 	float			: left;
-	width			: 1000px;
+	width			: 1053px;
+	height			: 521px;
+	margin-left		: 190px;
+	margin-top		: 10px;
+	background-color		: #EBC76C;
+	opacity			: 0.7;
+}
+
+.companyTitle {
+	position			: absolute;
+	width			: 579px;
+	height			: 35px;
+	margin-left		: 180px;
+	margin-top		: 20px;
+	padding-left		: 30px;
+	padding-top		: 5px;
+	background-color		: #FFF1B8;
+	font-size			: 30px;
+	
+}
+
+.companyIntro {
+	position			: absolute;
+	width			: 1028px;
+	height			: 440px;
+	margin-left		: 180px;
+	margin-top		: 65px;
+	padding-left		: 30px;
+	padding-top		: 20px;
+	background-color		: #FFF1B8;
 }
 /* 사라지는 이벤트*/
 
@@ -99,5 +171,19 @@ ul.dropDownList li a {
 /* 하단부*/
 .bottomDiv {
 
+}
+
+/* 임시, 현행에서 삭제예정 */
+
+#companyIntro {
+	display			: block;
+}
+
+#callquestion {
+	display			: none;
+}
+
+#roadmap {
+	display			: none;
 }
 </style>
