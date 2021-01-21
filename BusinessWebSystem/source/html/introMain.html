@@ -12,9 +12,44 @@
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript">
 // 이곳에 스크립트 입력
+// 실시간 이벤트
+$(document).ready(function() {
+	$(window).resize(function() {
+		// 실시간 body 조절
+		$('.bodyDiv').height($(window).height());
+
+		// width 조절
+		$('.backcoverDiv').css('width', $('.menuDiv').width()-190);
+		$('.companyIntro').css('width', $('.menuDiv').width()-224);
+		$('.companyTitle').css('width', $('.menuDiv').width()-483);
+
+		$('.contentList').css('height', $(window).height()-160);
+		$('.backcoverDiv').css('height', $(window).height()-118);
+		$('.companyIntro').css('height', $(window).height()-199);
+	});
+});
+
 // 매개변수
 var lastLeftTap = 0;
 
+// 시작 이벤트
+function onloadIntroMain() {
+	autoAdjustWidth();
+}
+// (Common) 윈도우 크기 계산 표시형삭 -> Winsize = width  x height
+function autoAdjustWidth() {
+	// body 조절
+	$('.bodyDiv').height($(window).height());
+	
+	var width = $(".menuDiv").width();
+	$('.backcoverDiv').width(width-190);
+	$('.companyIntro').width(width-224);
+	$('.companyTitle').width(width-483);
+
+	$('.contentList').height($(window).height()-160);
+	$('.backcoverDiv').height($(window).height()-118);
+	$('.companyIntro').height($(window).height()-199);
+}
 // 마우스 메뉴 접근
 function onmouseoverMenu(num) {
 	$("#dropDownIntroDiv").removeClass('viewMenu');
@@ -134,7 +169,7 @@ function resizeContentWidth(content, resizelength) {
 </script>
 </head>
 
-<body>
+<body onload ="onloadIntroMain()">
 <div class="bodyDiv">
 	<div class="topDiv">
 		<div class="topLogo">logo</div>
