@@ -5,8 +5,11 @@
 1, jquery animation
 http://www.wecorporation.co.kr/mypagedetail_1_k.html
 
-2. 파일편집 및 백터이미지 제작
+2. 파일편집 및 백터이미지 제작(현재는 안됨 : 2021.07.23)
 https://pixlr.com/kr/x/
 
 3. 무한루프 슬라이드예시
 https://im-developer.tistory.com/97
+
+4. 백터 이미지 제작
+https://www4.lunapic.com/editor/
